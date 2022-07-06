@@ -10,20 +10,40 @@
 <div class="container">  
   <div class="col-xs-12 col-sm-12 col-md-6 mt-4">
     <h2>Add Server</h2>
-    <form id="add-form" action="" class="mt-4">
+      <!-- Inputs -->
       <div class="add-sever">
-        <label for="exampleInputEmail1">Sever Name</label>
-        <input type="text" class="form-control" id="" placeholder="Sever Name">
+          <label for="exampleInputEmail1">Sever Name</label>
+          <input [(ngModel)]="sever_name" type="text" class="form-control" placeholder={{sn}}>
       </div>
       <div class="add-content mt-3">
-        <label for="exampleInputEmail1">Sever Content</label>
-        <input type="text" class="form-control" id="" placeholder="Sever Content">
+          <label for="exampleInputEmail1">Sever Content</label>
+          <input [(ngModel)]="sever_content" type="text" class="form-control" placeholder={{sc}}}>
       </div>
-      <div class="form-btn mt-4">
-        <button type="submit" class="btn btn-info me-3">Add Sever</button>
-        <button type="submit" class="btn btn-primary">Add Sever BluePrint</button>
+      <!-- Error  -->
+      <div [style.visibility]="emptyError ? 'visible' : 'hidden'" class="text-danger mt-2">
+          <h5><b>{{emptyInputEr}}</b></h5>
       </div>
-    </form>
+      <!-- btns -->
+      <div class="form-btn mt-3">
+          <button (click)="addServer(1)" class="btn btn-info me-3">Add Sever</button>
+          <button (click)="addServer(2)" class="btn btn-primary">Add Sever BluePrint</button>
+      </div>
+      <!-- Print panel -->
+      <!-- <div class="panel panel-default">
+        <div class="panel-heading">Panel Heading</div>
+        <div class="panel-body">Panel Content</div>
+      </div> -->
+
+
+      <div class="text-left mt-3">        
+        <div *ngFor="let arrayInputs of collect_inputs" class="panel panel-default"> 
+            <!-- <div class="panel-heading">Panel Heading : {{pHeading}}</div>    -->
+            <div class="panel-body">Panel Heading : {{arrayInputs}}</div>         
+            
+            
+        </div> 
+      </div>
+
   </div>
 </div>  
 </body>
