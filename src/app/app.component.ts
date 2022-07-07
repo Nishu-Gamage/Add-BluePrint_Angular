@@ -16,12 +16,12 @@ export class AppComponent {
   server_name = '';        
   server_content = ''; 
   
-  collect_inputs: any = [];
-  print_in_panel: any = [];
-  
   // Error msg
   emptyInputEr ='Check your inputs and try again.';
   emptyError = false;
+
+  // inputs collect array 
+  collect_inputs: any = [];
 
   // Add Sever btn
   addServer(){    
@@ -37,6 +37,7 @@ export class AppComponent {
     }
   }
 
+  // Add Sever BluePrint btn
   addServerBluePrint(){    
     if(!this.server_name || !this.server_content){
       this.emptyError = true;
