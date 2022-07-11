@@ -1,1 +1,21 @@
-<p>cockpit works!</p>
+<div class="row">
+    <h2>Add Server</h2>
+    <!-- Inputs -->
+    <div class="add-sever">
+        <label for="exampleInputEmail1">Sever Name</label>
+        <input [(ngModel)]="server_name" type="text" class="form-control" placeholder={{sn}}>
+    </div>
+    <div class="add-content mt-3">
+        <label for="exampleInputEmail1">Sever Content</label>
+        <input [(ngModel)]="server_content" type="text" class="form-control" placeholder={{sc}}}>
+    </div>
+    <!-- Error  -->
+    <div [style.visibility]="emptyError ? 'visible' : 'hidden'" class="text-danger mt-2">
+        <h5><b>{{emptyInputEr}}</b></h5>
+    </div>
+    <!-- btns -->
+    <div class="form-btn mt-3">
+        <button (click)="addServer()" class="btn btn-info me-3">Add Sever</button>
+        <button (click)="addServerBluePrint()" class="btn btn-primary">Add Sever BluePrint</button>
+    </div>      
+</div>
