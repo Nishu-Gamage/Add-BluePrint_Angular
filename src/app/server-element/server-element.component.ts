@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ServerElementComponent implements OnInit {
 
+  // Print array element
   @Input("srvElement") element: { name:string; type: string; content: string; } = {
     name: '',
     type: '',

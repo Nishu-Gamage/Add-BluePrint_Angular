@@ -1,4 +1,4 @@
-<div class="row">
+<div class="container mt-3">
     <h2>Add Server</h2>
     <!-- Inputs -->
     <div class="add-sever">
@@ -8,10 +8,6 @@
     <div class="add-content mt-3">
         <label for="exampleInputEmail1">Sever Content</label>
         <input [(ngModel)]="server_content" type="text" class="form-control" placeholder={{sc}}}>
-    </div>
-    <!-- Error  -->
-    <div [style.visibility]="emptyError ? 'visible' : 'hidden'" class="text-danger mt-2">
-        <h5><b>{{emptyInputEr}}</b></h5>
     </div>
     <!-- btns -->
     <div class="form-btn mt-3">
