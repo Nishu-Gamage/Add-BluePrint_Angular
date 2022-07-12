@@ -15,7 +15,7 @@ export class CockpitComponent implements OnInit {
   server_name = '';        
   server_content = ''; 
   @Output() serverCreated = new EventEmitter <{serverName:string , serverContent:string}> () ;
-  @Output() bluePrintCreated = new EventEmitter <{serverName:string , serverContent:string}> () ;
+  @Output('bpCreated') bluePrintCreated = new EventEmitter <{serverName:string , serverContent:string}> () ;
 
   // Add Sever btn
   addServer(){
@@ -24,14 +24,7 @@ export class CockpitComponent implements OnInit {
         serverName : this.server_name,
         serverContent : this.server_content
       })
-    } 
-    // Set Error 
-    else {
-      this.serverCreated.emit({
-        serverName : 'Error',
-        serverContent : 'Check your inputs and try again.'
-      })
-    }   
+    }  
   }
 
   // Add Sever BluePrint btn
@@ -41,13 +34,6 @@ export class CockpitComponent implements OnInit {
         serverName : this.server_name,
         serverContent : this.server_content
        })
-    }  
-    // Set Error 
-    else {
-      this.serverCreated.emit({
-        serverName : 'Error',
-        serverContent : 'Check your inputs and try again.'
-      })
     }
   }
 
